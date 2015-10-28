@@ -155,6 +155,34 @@ appMenu = function () {
                                     )
 
                             )
+                    ) +
+            dom.li('class="dropdown"',
+                    dom.a('href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"',
+                            dom.i('class="fa fa-icon-list-alt"', '') +
+                            'Mantenimiento Usuario' +
+                            dom.span('class="caret"', '')
+                            ) +
+                    dom.ul('class="dropdown-menu" role="menu"',
+                            dom.li('',
+                                    dom.a('href="#/usuario/list"',
+                                            dom.i('class="fa fa-fw fa-file-text"', '') +
+                                            'Usuario'
+                                            )
+                                    ) +
+                            dom.li('',
+                                    dom.a('href="#/tipousuario/list"',
+                                            dom.i('class="fa fa-fw fa-tag"', '') +
+                                            'Tipos de usuario'
+                                            )
+                                    ) +
+                            dom.li('',
+                                    dom.a('href="#/estado/list"',
+                                            dom.i('class="fa fa-fw fa-user"', '') +
+                                            'Estado'
+                                            )
+                                    )
+
+                            )
                     )
             )
 }
