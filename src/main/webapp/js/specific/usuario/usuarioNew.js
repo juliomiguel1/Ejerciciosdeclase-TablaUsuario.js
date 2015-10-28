@@ -32,7 +32,7 @@ var usuarioNew = function () {
 usuarioNew.prototype = new newModule();
 usuarioNew.prototype.doEventsLoading = function(){
     
-    form.g
+    form.getForeign("usuario","tipousuario");
 //
 //    $('#usuarioForm #obj_tipousuario_button').unbind('click');
 //    $('#usuarioForm #obj_tipousuario_button').click(function () {
