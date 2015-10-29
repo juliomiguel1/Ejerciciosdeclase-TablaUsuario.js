@@ -39,8 +39,7 @@ usuariotabla.prototype.getViewTemplate_func = function (strClass, jsonDataViewMo
 
     var nuevo = "<table class=\"table table table-bordered table-condensed\">";
 
-      
-    var nue = jsonDataViewModule.meta.message.length;
+    
     for (var i = 0; i <= jsonDataViewModule.meta.message.length; i++) {
 
         var short = jsonDataViewModule.meta.message[i];
@@ -51,8 +50,9 @@ usuariotabla.prototype.getViewTemplate_func = function (strClass, jsonDataViewMo
                     if (short[metadatos] === 'obj_tipousuario' || short[metadatos] === 'obj_estado') {
                         var ultimorecorrido = beaner[beandatos].bean;
                         var imprimir="";
-                        for (var ajena in ultimorecorrido) {                             
-                               imprimir+= ultimorecorrido[ajena];
+                        for (var ajena in ultimorecorrido) {
+                            
+                               imprimir=ultimorecorrido[ajena]+ " "+imprimir;
                                imprimir += " ";
                         }
                         nuevo += '<tr><td><strong>' + short[metadatos] + '</strong></td><td>' + imprimir+ '</td></tr>';
