@@ -20,7 +20,7 @@
         $('#broth_panel_heading').empty().append(fillDocumentoPageHeader('View'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();
-        ausiasFLOW.initialize(viewModule, place, strClass, 'view', strParam);
+        ausiasFLOW.initialize(usuariotabla, place, strClass, 'usuariotabla', strParam);
         return false;
     });
     
