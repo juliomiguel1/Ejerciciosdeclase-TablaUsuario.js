@@ -33,5 +33,5 @@ usuarioNew.prototype = new newModule();
 usuarioNew.prototype.doEventsLoading = function(){
     
     form.getForeign("usuario","tipousuario");
-
+    form.getForeign("usuario","estado");
 };

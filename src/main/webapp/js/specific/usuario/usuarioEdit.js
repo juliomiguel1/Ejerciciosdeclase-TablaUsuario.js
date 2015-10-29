@@ -35,4 +35,5 @@ usuarioEdit.prototype = new newModule();
 usuarioEdit.prototype.doEventsLoading = function(){
 
   form.getForeign("usuario","tipousuario");
+  form.getForeign("usuario","estado");
 };
