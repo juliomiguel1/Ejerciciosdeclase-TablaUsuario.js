@@ -34,11 +34,5 @@ var usuarioEdit= function(){
 usuarioEdit.prototype = new newModule();
 usuarioEdit.prototype.doEventsLoading = function(){
 
-    $('#usuarioForm #obj_tipousuario_button').unbind('click');
-    $('#usuarioForm #obj_tipousuario_button').click(function () {
-          $('#usuarioForm').append(modal.getEmptyModal());
-        modal.loadModal('#modal01', modal.getModalHeader('Eleccion de usuario'),
-        "", modal.getModalFooter(),true);
-    });
-
+  form.getForeign("usuario","tipousuario");
 };
