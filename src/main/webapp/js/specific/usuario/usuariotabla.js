@@ -33,18 +33,36 @@ var usuariotabla = function () {
 
 usuariotabla.prototype = new viewModule();
 usuariotabla.prototype.getViewTemplate_func = function (strClass, jsonDataViewModule) {
-    
-   
-    
-   
-    var nuevo = "<table class=\"table table table-bordered table-condensed\">";
-    
-      var nombre = JSON.stringify(jsonDataViewModule.bean.message.id); 
-      var short= JSON.stringify(jsonDataViewModule.meta.message[0].ShortName); 
-        
-        nuevo +='<tr><td><strong>' + nombre + '</strong></td><td>' + jsonDataViewModule.message + '</td></tr>';
-         
 
+
+
+
+    var nuevo = "<table class=\"table table table-bordered table-condensed\">";
+
+      
+    var nue = jsonDataViewModule.meta.message.length;
+    for (var i = 0; i <= jsonDataViewModule.meta.message.length; i++) {
+
+        var short = jsonDataViewModule.meta.message[i];
+        var beaner = jsonDataViewModule.bean.message;
+        for (var metadatos in short) {
+            for (var beandatos in beaner) {
+                if (short[metadatos] === beandatos) {
+                    if (short[metadatos] === 'obj_tipousuario' || short[metadatos] === 'obj_estado') {
+                        var ultimorecorrido = beaner[beandatos].bean;
+                        var imprimir="";
+                        for (var ajena in ultimorecorrido) {                             
+                               imprimir+= ultimorecorrido[ajena];
+                               imprimir += " ";
+                        }
+                        nuevo += '<tr><td><strong>' + short[metadatos] + '</strong></td><td>' + imprimir+ '</td></tr>';
+                    } else {
+                        nuevo += '<tr><td><strong>' + short[metadatos] + '</strong></td><td>' + beaner[beandatos] + '</td></tr>';
+                    }
+                }
+            }
+        }
+    }
     nuevo += '</table>';
-     return nuevo;
- }
+    return nuevo;
+}
