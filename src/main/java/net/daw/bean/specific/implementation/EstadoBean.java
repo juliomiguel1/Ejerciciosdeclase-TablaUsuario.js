@@ -50,17 +50,6 @@ public class EstadoBean extends BeanGenImpl implements BeanInterface {
     public EstadoBean(Integer id) {
         this.id = id;
     }
-
-    @Expose
-    @MethodMetaInformation(
-            IsId = true,
-            UltraShortName = "Iden.",
-            ShortName = "Identif.",
-            Description = "Número Identificador",
-            Type = MetaEnum.FieldType.Integer,
-            DefaultValue = "0"
-    )
-    private Integer id;
     
     @Expose
     @MethodMetaInformation(            
@@ -76,6 +65,19 @@ public class EstadoBean extends BeanGenImpl implements BeanInterface {
     private String tipo;
 
 
+
+    @Expose
+    @MethodMetaInformation(
+            IsId = true,
+            UltraShortName = "Iden.",
+            ShortName = "Identif.",
+            Description = "Número Identificador",
+            Type = MetaEnum.FieldType.Integer,
+            DefaultValue = "0"
+    )
+    private Integer id;
+    
+    
 
     public String getTipo() {
         return tipo;
